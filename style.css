@@ -1,0 +1,8 @@
+.window {
+    overflow: hidden;
+    width: 500px;
+}
+.images {
+    display: flex;
+    transition: transform 0.5s
+}
