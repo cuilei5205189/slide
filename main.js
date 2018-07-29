@@ -2,36 +2,41 @@ var allButtons = $('#buttons > button')
 for (let i = 0; i < allButtons.length; i++) {
     $(allButtons[i]).on('click', function (e) {
         var index = $(e.currentTarget).index()
-        var n = index * -500
+        var p = index * -500
         $('#images').css({
-            transform: 'translate(' + n + 'px)'
+            transform: 'translate(' + p + 'px)'
         })
+        n = index
+        addBtnColor(allButtons.eq(n))
+
     })
 }
-
-
 
 var n = 0
 var size = allButtons.length
 
-var timerId = setInterval(() => {
-    n += 1
-    allButtons.eq(n % size).trigger('click')
-        .addClass('red')
-        .siblings('.red').removeClass('red')
-}, 1000)
+var timerId = setTimer()
 
 $('.window').on('mouseenter', function (e) {
     window.clearInterval(timerId)
-    console.log('mouseenter')
-
 })
 $('.window').on('mouseleave', function () {
-    console.log('mouseleave')
-    timerId = setInterval(() => {
-        n += 1
-        allButtons.eq(n % size).trigger('click')
-            .addClass('red')
-            .siblings('.red').removeClass('red')
-    }, 1000)
+    timerId = setTimer()
 })
+
+function playSlide(index) {
+    allButtons.eq(index).trigger('click')
+}
+
+function addBtnColor($button) {
+    $button
+        .addClass('red')
+        .siblings('.red').removeClass('red')
+}
+
+function setTimer() {
+    return setInterval(() => {
+        n += 1
+        playSlide(n % size)
+    }, 1000)
+}
