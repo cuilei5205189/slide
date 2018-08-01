@@ -17,7 +17,7 @@
 }
 
 .images>img {
-    transition: all 2s;
+    transition: all 1s;
     width: 100%;
     position: absolute;
     top: 0;

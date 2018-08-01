@@ -1,13 +1,39 @@
 let n
 init()
-setInterval(() => {
+
+let timer = setInterval(() => {
     makeLeave(getImage(n))
         .one('transitionend', (e) => {
             makeWaiting($(e.currentTarget))
         })
     makeCurrent(getImage(n + 1))
     n += 1
-}, 3000)
+}, 2000)
+
+
+//切换页面时，轮播暂停
+document.addEventListener('visibilitychange', function (e) {
+    if (document.hidden) {
+        window.clearInterval(timer)
+    } else {
+        let timer = setInterval(() => {
+            makeLeave(getImage(n))
+                .one('transitionend', (e) => {
+                    makeWaiting($(e.currentTarget))
+                })
+            makeCurrent(getImage(n + 1))
+            n += 1
+        }, 2000)
+    }
+})
+
+
+
+
+
+
+
+
 
 
 function getImage(n) {
