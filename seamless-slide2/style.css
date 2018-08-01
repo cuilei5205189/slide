@@ -13,15 +13,18 @@
 
 .images {
     display: flex;
-    transition: all 1s;
+    transition: all 2s;
 }
 
 .images>img {
-    transition: all 1s;
     width: 100%;
     top: 0;
 }
 
 .buttons {
+    text-align: center;
+}
+
+.controls {
     text-align: center;
 }
