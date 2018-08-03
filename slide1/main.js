@@ -36,7 +36,7 @@ function autoPlay() {
     timer = setInterval(function () {
         currentIndex++
         goTo(currentIndex)
-    }, 2000)
+    }, 3000)
 }
 
 autoPlay()
