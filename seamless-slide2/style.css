@@ -13,7 +13,7 @@
 
 .images {
     display: flex;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 .images>img {
@@ -27,4 +27,8 @@
 
 .controls {
     text-align: center;
+}
+
+.red {
+    border: 1px solid red;
 }

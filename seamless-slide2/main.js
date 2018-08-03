@@ -11,7 +11,7 @@ $(pre).on('click', function (e) {
 
 let timer = setInterval(function () {
     goToSlide(current + 1)
-}, 3000)
+}, 4000)
 
 $('.container').on('mouseenter', () => {
     window.clearInterval(timer)
@@ -31,7 +31,7 @@ function makeFakeSlides() {
 
 
 function bindEvents() {
-    $('.buttons').on('click', 'button', function (e) {
+    $('.buttons').on('mouseenter', 'button', function (e) {
         let $button = $(e.currentTarget)
         let index = $button.index()
         console.log($button.index())
@@ -39,14 +39,22 @@ function bindEvents() {
     })
 }
 
+function addBtnColor($button) {
+    $button
+        .addClass('red')
+        .siblings('.red').removeClass('red')
+}
+// let $button = $('.buttons>button')
+// addBtnColor($button.eq(current))
+
 function goToSlide(index) {
     if (index > $('.buttons>button').length - 1) {
         index = 0
     } else if (index < 0) {
         index = $('.buttons>button').length - 1
     }
-    console.log(current, index);
-
+    // console.log(current, index);
+    addBtnColor($('.buttons>button').eq(index))
     if (current === $('.buttons>button').length - 1 && index === 0) {
         //最后一张到第一张
         $('.images').css({
