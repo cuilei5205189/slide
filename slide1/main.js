@@ -17,7 +17,7 @@ function goTo(index) {
         index = $('.dots>.dot').length - 1
     }
     $('.images').css({
-        transform: `translateX(-${400*index}px)`
+        transform: `translateX(-${1200*index}px)`
     })
     addDotsColor(index)
     currentIndex = index
@@ -36,7 +36,7 @@ function autoPlay() {
     timer = setInterval(function () {
         currentIndex++
         goTo(currentIndex)
-    }, 1500)
+    }, 2000)
 }
 
 autoPlay()

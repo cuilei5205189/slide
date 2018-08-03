@@ -1,8 +1,7 @@
 .window {
-    height: 300px;
-    width: 400px;
+    height: 800px;
+    width: 1200px;
     overflow: hidden;
-    border: 1px solid black;
     position: relative;
     margin: 100px auto;
 }
@@ -41,8 +40,8 @@
 }
 
 .window .controls {
-    font-size: 30px;
-    color: rgb(126, 126, 126);
+    font-size: 60px;
+    color: rgb(226, 226, 226);
     position: absolute;
     left: 0;
     right: 0;
@@ -59,9 +58,9 @@
 }
 
 .window .controls .pre {
-    margin-right: 320px;
+    margin-right: 1000px;
 }
 
 .active {
-    box-shadow: inset 0 0 5px 2px rgba(255, 0, 0, 0.589)
+    box-shadow: inset 0 0 5px 2px rgba(255, 0, 0, 0.589);
 }
